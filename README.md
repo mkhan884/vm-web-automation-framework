@@ -21,7 +21,14 @@ This is a modular and scalable web automation testing framework built using **Py
 
 ## 🛠️ Project Structure
 
-<pre> web-automation-framework/ ├── tests/ # All test case files ├── pages/ # Page Object Model classes ├── utils/ # Utility functions (e.g., driver setup) ├── reports/ # Allure reports output directory (generated after tests) ├── conftest.py # Pytest fixtures and setup ├── requirements.txt # Project dependencies └── README.md # Project documentation </pre>
+<pre> web-automation-framework/ 
+├── tests/ # All test case files 
+├── pages/ # Page Object Model classes 
+├── utils/ # Utility functions (e.g., driver setup) 
+├── reports/ # Allure reports output directory (generated after tests) 
+├── conftest.py # Pytest fixtures and setup 
+├── requirements.txt # Project dependencies 
+└── README.md # Project documentation </pre>
 
 ## 🧰 Installation & Setup
 
