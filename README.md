@@ -28,7 +28,9 @@ This is a modular and scalable web automation testing framework built using **Py
 ├── reports/ # Allure reports output directory (generated after tests) 
 ├── conftest.py # Pytest fixtures and setup 
 ├── requirements.txt # Project dependencies 
-└── README.md # Project documentation </pre>
+├── run_tests.sh # bash script to run tests and auto save allure history
+└── README.md # Project documentation
+</pre>
 
 ## 🧰 Installation & Setup
 

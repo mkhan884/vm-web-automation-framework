@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from .base_page import BasePage
+from .mbb_delivery_location_page import MbbDeliveryLocationPage
 from utils.random_email import RandomEmail
 from .id_type_page import IdTypePage
 import allure
@@ -22,16 +23,19 @@ class AccountCreationPage(BasePage):
         assert header.is_displayed() and create_btn.is_displayed()
 
     @allure.step("Create an account using a randomly generated email")
-    def create_account(self):
+    def create_account(self, account_type):
         email = RandomEmail.generate_random_email()
         self.find(self.EMAIL_TEXT_BOX).send_keys(email)
         self.find(self.PASSWORD_TEXT_BOX).send_keys("Abcabc123")
         self.click(self.CREATE_BTN)
         element = self.find(self.POPUP_HEADER)
-        assert element is not None
         assert element.is_displayed()
         popup_btn = self.find(self.POPUP_BTN)
         assert popup_btn.is_displayed()
         self.click(self.POPUP_BTN)
         self.wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, "vmo-modal-inner")))
-        return IdTypePage(self.driver)
+        if(account_type == 'mobile'):
+            return IdTypePage(self.driver)
+        else:
+            return MbbDeliveryLocationPage(self.driver)
+    

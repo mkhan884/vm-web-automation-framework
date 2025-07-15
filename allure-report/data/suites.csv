@@ -1,2 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"This test verifies the web sign up flow for a 1 month product","36902","Sign Up Flow - 1 Month","tests","Mon Jul 14 15:15:27 GMT+04:00 2025","passed","Mon Jul 14 15:16:04 GMT+04:00 2025","","test_001","",""
+"Verify the web sign up flow for MBB 1 month plan","73524","Sign Up Flow - MBB 1 Month","tests","Tue Jul 15 16:29:28 GMT+04:00 2025","passed","Tue Jul 15 16:30:42 GMT+04:00 2025","","test_002","",""
+"This test verifies the web sign up flow for a 1 month product","38207","Sign Up Flow - 1 Month","tests","Tue Jul 15 16:28:49 GMT+04:00 2025","passed","Tue Jul 15 16:29:27 GMT+04:00 2025","","test_001","",""

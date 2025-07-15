@@ -18,7 +18,7 @@ def test_sign_up_flow(driver):
     number_selection_page.verify_number_selection_page()
     account_creation_page = number_selection_page.click_confirm()
     account_creation_page.verify_account_creation_page()
-    id_type_page = account_creation_page.create_account()
+    id_type_page = account_creation_page.create_account("mobile")
     id_type_page.verify_id_page()
     address_page = id_type_page.select_id()
     address_page.verify_address_page()

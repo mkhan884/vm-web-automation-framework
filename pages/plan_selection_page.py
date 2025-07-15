@@ -3,6 +3,7 @@ from .base_page import BasePage
 from .promo_page import PromoPage
 import re
 import allure
+import time
 
 class PlanSelectionPage(BasePage):
     
@@ -15,8 +16,8 @@ class PlanSelectionPage(BasePage):
 
     @allure.step("Verify plan selection page.")
     def verify_plan_selection_page_load(self):
-        element = self.find(self.PLAN_SELECTION_HEADING)
-        assert element.is_displayed()
+        heading = self.find(self.PLAN_SELECTION_HEADING)
+        assert heading.is_displayed()
     
     @allure.step("Change the plan and verify that the correct amount is reflected in the plan price")
     def change_plan(self):
@@ -25,6 +26,7 @@ class PlanSelectionPage(BasePage):
         assert data_amount == '6'
         self.scroll_to(self.DURATION_SELECTOR)
         self.click(self.DURATION_SELECTOR)
+        time.sleep(2)
         price = self.find(self.CURRENT_PRICE).text
         match = re.search(r'\d+', price).group()
         assert match == '119'

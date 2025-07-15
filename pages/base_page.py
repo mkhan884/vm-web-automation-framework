@@ -23,3 +23,8 @@ class BasePage:
         element = self.find(locator)
         self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
         return element
+
+    def scroll_to_top_of_element(self, locator):
+        element = self.find(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'start'});", element)
+        return element

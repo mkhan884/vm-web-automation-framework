@@ -5,6 +5,7 @@ import allure
 
 class DeliveryDetailsPage(BasePage):
     PAGE_HEADER = (By.XPATH, "//span[contains(text(), \"We'll deliver your SIM\")]")
+    MBB_PAGE_HEADER = (By.XPATH, '//span[normalize-space(.)="Where do you want your order delivered?"]')
     OFFICE = (By.XPATH, "//div[@class='vmo-location-type-title' and text()='Office']")
     BUILDING_NAME = (By.ID, 'building')
     FLOOR = (By.ID, "floor")
@@ -16,7 +17,10 @@ class DeliveryDetailsPage(BasePage):
 
     @allure.step("Verify delivery details page header and building options")
     def verify_delivery_details_page(self):
-        header = self.find(self.PAGE_HEADER)
+        try:
+            header = self.find(self.PAGE_HEADER)
+        except:
+            header = self.find(self.MBB_PAGE_HEADER)
         office = self.find(self.OFFICE)
         assert header.is_displayed() and office.is_displayed
     
