@@ -50,4 +50,9 @@ class CheckoutPage(BasePage):
         price_text = self.get_text(self.FINAL_AMOUNT)
         assert price_text == "AED 262.50"
         assert header.is_displayed() and location.is_displayed() and plan.is_displayed() and input.is_displayed() and address.is_displayed()
+
+    @allure.step("Verify tourist checkout page header and cards.")
+    def verify_tourist_checkout_page(self):
+        header = self.find(self.CHECKOUT_HEADER)
+        assert header.is_displayed()
        

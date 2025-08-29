@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from .base_page import BasePage
 from .mbb_delivery_location_page import MbbDeliveryLocationPage
+from .activation_method_page import ActivationMethodPage
 from utils.random_email import RandomEmail
 from .id_type_page import IdTypePage
 import allure
@@ -36,6 +37,8 @@ class AccountCreationPage(BasePage):
         self.wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, "vmo-modal-inner")))
         if(account_type == 'mobile'):
             return IdTypePage(self.driver)
-        else:
+        elif(account_type == 'mbb'):
             return MbbDeliveryLocationPage(self.driver)
+        else:
+            return ActivationMethodPage(self.driver)
     

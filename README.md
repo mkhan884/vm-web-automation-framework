@@ -58,8 +58,20 @@ pytest
 pytest --alluredir=./allure-results
 ```
 
-## Generate and Open the Report
+## Serve the Report
 
 ```bash
 allure serve ./allure-results 
+```
+
+## Generate and Open the report
+
+```bash
+allure generate allure-results --clean -o allure-report
+allure open allure-report
+```
+
+## Script to run and generate report
+```bash
+./run_tests.sh
 ```

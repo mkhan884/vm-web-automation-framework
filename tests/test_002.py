@@ -2,7 +2,7 @@ from pages.home_page import HomePage
 import allure
 
 @allure.title("Sign Up Flow - MBB 1 Month")
-@allure.description("Verify the web sign up flow for MBB 1 month plan")
+@allure.description("This test verifies the web sign up flow for MBB 1 month plan")
 def test_mbb_sign_up_flow(driver):
     driver.get("https://www.virginmobile.ae")
     home_page = HomePage(driver)
