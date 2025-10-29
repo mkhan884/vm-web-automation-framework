@@ -8,8 +8,8 @@ import allure
 class ServiceTypePage(BasePage):
     
     SERVICE_TYPE_PAGE_HEADING = (By.XPATH, "//h1[text()='What brings you here?']")
-    MOBILE_PLAN_BTN = (By.XPATH, "//p[text()='Mobile Plan']")
-    HOME_INTERNET_BTN = (By.XPATH, "//p[starts-with(normalize-space(.), 'Home Internet') and span[text()='Emirates ID holders only']]")
+    MOBILE_PLAN_BTN = (By.XPATH, "//a[p[normalize-space(.)='Mobile Plan']]")
+    HOME_INTERNET_BTN = (By.XPATH, "//a[p[normalize-space(.)='Home Internet']]")
     TOURIST_BTN = (By.XPATH, "//p[contains(text(), 'Tourist Plan') and span[text()='Passport only']]")
 
     @allure.step("Verify that the service type page has loaded correctly")

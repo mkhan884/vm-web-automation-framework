@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from .base_page import BasePage
-from .account_creation_page import AccountCreationPage
+from .id_type_page import IdTypePage
 import allure
 
 class NumberSelectionPage(BasePage):
@@ -21,4 +21,4 @@ class NumberSelectionPage(BasePage):
     @allure.step("Select confirm btn")
     def click_confirm(self):
         self.click(self.CONFIRM_BTN)
-        return AccountCreationPage(self.driver)
+        return IdTypePage(self.driver)

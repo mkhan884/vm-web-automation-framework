@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from .base_page import BasePage
 from .mbb_promo_page import MbbPromoPage
+from .mbb_residency_check_page import MbbResidencyCheckPage
 import allure
 import time
 
@@ -33,6 +34,8 @@ class CoverageCheckPage(BasePage):
         time.sleep(2)
         btn.click()
         self.find(self.CONTINUE_BTN).click()
+
+        return MbbResidencyCheckPage(self.driver)
     
     @allure.step("Verify ID Popup and Confirm")
     def id_popup_check(self):

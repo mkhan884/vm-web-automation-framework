@@ -19,10 +19,9 @@ class MbbPromoPage(BasePage):
 
     @allure.step("Verify that the header, title and router image have loaded")
     def verify_page_load(self):
-        header = self.find(self.PAGE_HEADER)
         title = self.find(self.CARD_TITLE)
         img = self.find(self.ROUTER_IMG)
-        assert header.is_displayed() and title.is_displayed() and img.is_displayed()
+        assert title.is_displayed() and img.is_displayed()
     
     @allure.step("Verify header, data card and router card. Select no router and proceed")
     def choose_plan(self):

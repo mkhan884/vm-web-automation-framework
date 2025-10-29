@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from .base_page import BasePage
-from .address_page import AddressPage
+from .account_creation_page import AccountCreationPage
 import allure
 
 class IdTypePage(BasePage):
@@ -23,4 +23,4 @@ class IdTypePage(BasePage):
     @allure.step("Select EID as the ID option")
     def select_id(self):
         self.click(self.ID_SELECTOR)
-        return AddressPage(self.driver)
+        return AccountCreationPage(self.driver)
