@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"This test verifies the web toursit sign up flow.","34277","Sign Up Flow - Tourist Plan","tests","Wed Dec 03 12:57:17 GMT+04:00 2025","passed","Wed Dec 03 12:57:51 GMT+04:00 2025","","test_003","",""
+"This test verifies the web sign up flow for a 1 month product","44629","Sign Up Flow - 1 Month","tests","Wed Dec 03 12:54:22 GMT+04:00 2025","passed","Wed Dec 03 12:55:06 GMT+04:00 2025","","test_001","",""
+"This test verifies the web sign up flow for MBB 1 month plan","90078","Sign Up Flow - MBB 1 Month","tests","Wed Dec 03 12:55:44 GMT+04:00 2025","passed","Wed Dec 03 12:57:15 GMT+04:00 2025","","test_002","",""
