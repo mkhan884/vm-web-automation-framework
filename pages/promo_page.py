@@ -5,7 +5,7 @@ import allure
 
 class PromoPage(BasePage):
     
-    PROMO_HEADING = (By.XPATH, "//div[contains(text(), 'Go Yearly')]")
+    PROMO_HEADING = (By.XPATH, "//span[contains(text(),'Want a discount')]")
     MONTHLY_BTN = (By.XPATH, "//button[normalize-space()='Stay on monthly']")
     YEARLY_BTN = (By.XPATH, "//button[normalize-space()='GO 12-MONTH']")
 
