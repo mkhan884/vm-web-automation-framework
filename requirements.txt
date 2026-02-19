@@ -1,5 +1,6 @@
 selenium
 pytest
 allure-pytest
+allure
 webdriver-manager
 pytest-rerunfailures
