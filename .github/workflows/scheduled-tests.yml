@@ -5,6 +5,11 @@ on:
     - cron: '0 7 * * *'  # run daily at 7 AM UTC (modify as needed)
   workflow_dispatch: {}  # allow manual trigger
 
+permissions:
+  contents: read       # default for checkout
+  pages: write         # needed by deploy-pages action
+  id-token: write      # required to fetch OIDC token for deployment
+
 jobs:
   run-tests:
     runs-on: ubuntu-latest
