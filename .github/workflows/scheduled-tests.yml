@@ -36,3 +36,15 @@ jobs:
           path: |
             allure-results
             allure-report
+
+      - name: Upload report for GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: allure-report
+
+      - name: Upload report for GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: allure-report
