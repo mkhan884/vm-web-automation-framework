@@ -39,12 +39,12 @@ jobs:
 
       - name: Upload report for GitHub Pages
         if: always()
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: allure-report
 
       - name: Upload report for GitHub Pages
         if: always()
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: allure-report
