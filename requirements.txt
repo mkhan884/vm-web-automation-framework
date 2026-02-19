@@ -3,4 +3,3 @@ pytest
 allure-pytest
 webdriver-manager
 pytest-rerunfailures
-undetected-chromedriver
