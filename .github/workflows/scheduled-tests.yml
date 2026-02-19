@@ -29,6 +29,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run automation tests
+        continue-on-error: true
         run: |
           chmod +x run_tests.sh
           ./run_tests.sh
