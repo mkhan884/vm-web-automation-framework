@@ -37,11 +37,9 @@ jobs:
             allure-results
             allure-report
 
-      - name: Upload report for GitHub Pages
+      - name: Ensure report directory exists
         if: always()
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: allure-report
+        run: mkdir -p allure-report
 
       - name: Upload report for GitHub Pages
         if: always()

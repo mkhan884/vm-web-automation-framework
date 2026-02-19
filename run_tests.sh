@@ -10,8 +10,12 @@ if [ -d "allure-report/history" ]; then
   cp -r allure-report/history allure-results/
 fi
 
+# make sure the output directory exists even if report generation fails
+mkdir -p allure-report
+
 # Step 3: Generate allure report
 allure generate allure-results --clean -o allure-report
 
-# Step 4: Open the report
-allure open allure-report
+# Step 4: Open the report (optional)
+# this will fail in headless CI; the script may be running locally
+allure open allure-report || true
