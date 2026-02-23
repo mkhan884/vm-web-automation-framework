@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 import os
 
-
 def get_driver(browser="chrome"):
     if browser == "chrome":
         options = webdriver.ChromeOptions()
@@ -15,7 +14,7 @@ def get_driver(browser="chrome"):
         # switch to headless mode and add the typical flags required for
         # containerized Linux runners.
         if os.environ.get("CI"):
-            # options.add_argument("--headless=new")
+            options.add_argument("--headless=new")
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-dev-shm-usage")
             options.add_argument("--disable-gpu")
@@ -23,14 +22,10 @@ def get_driver(browser="chrome"):
 
         # webdriver-manager automatically downloads and sets up the correct chromedriver
         service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
-
-
-        return driver
+        return webdriver.Chrome(service=service, options=options)
     elif browser == "firefox":
         from webdriver_manager.firefox import GeckoDriverManager
         from selenium.webdriver.firefox.service import Service as FFService
-
         service = FFService(GeckoDriverManager().install())
         return webdriver.Firefox(service=service)
     else:
