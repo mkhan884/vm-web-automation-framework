@@ -46,11 +46,42 @@ cd web-automation-framework
 pip install -r requirements.txt
 ```
 
-## Running Tests
+## Running Tests Locally
+
+Before running tests you need a working Python environment and
+project dependencies installed.  From the workspace root:
 
 ```bash
-pytest
+# install dependencies once
+pip install -r requirements.txt
 ```
+
+Then run the suite in whichever granularity you need:
+
+```bash
+# run everything
+pytest
+
+# run a single test file
+pytest tests/test_001.py
+
+# run a single test function by node id or keyword
+pytest tests/test_001.py::test_sign_up_flow
+pytest -k sign_up_flow
+```
+
+The `run_tests.sh` helper script is a thin wrapper that adds the
+Allure arguments and rerun options; you can use it interchangeably:
+
+```bash
+./run_tests.sh             # runs full suite with allure results
+./run_tests.sh tests/test_002.py  # passes arguments through to pytest
+```
+
+The examples above are all local commands: they don’t require GitHub
+Actions or any external services.  If you do want to reproduce the CI
+environment, export `CI=true` before running, or use `act` as described
+later in this document.
 
 ## Running Tests with Allure
 
