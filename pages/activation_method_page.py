@@ -10,7 +10,7 @@ class ActivationMethodPage(BasePage):
     DRIVER_CARD = (By.XPATH, "//p[@class='activation-method-title' and normalize-space(.)='Activation via Driver']")
     DELIVERY_ACTIVATION_BTN = (By.XPATH, "//button[text()='delivery activation']")
     STORE_ACTIVATION_LINK = (By.XPATH,"//button[contains(@class,'instore-activation-method-cta') and normalize-space(.)='Activation in store']")
-
+    PHYSICAL_ACTIVATION_BTN = (By.XPATH, "//button[normalize-space()='Physical Activation']")
 
     @allure.step("Verify the activation method page header, instant activation / store activation cards.")
     def verify_activation_method_page(self):
@@ -26,7 +26,10 @@ class ActivationMethodPage(BasePage):
         return AddressPage(self.driver)
     
     @allure.step("Select activation in store link and navigate to checkout page.")
-    def select_store_activation(self):
+    def select_store_activation_link(self):
         self.click(self.STORE_ACTIVATION_LINK)
         return CheckoutPage(self.driver)
-
+    
+    def select_pyhiscal_activation_btn(self):
+        self.scroll_to(self.PHYSICAL_ACTIVATION_BTN).click()
+        return CheckoutPage(self.driver)

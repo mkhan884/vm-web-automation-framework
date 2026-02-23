@@ -15,5 +15,5 @@ def test_tourist_plan_flow(driver):
     location_request_page = account_creation_page.create_account("tourist")
     location_request_page.verify_location_request_page()
     activation_method_page = location_request_page.click_share_location_btn()
-    checkout_page = activation_method_page.select_store_activation()
+    checkout_page = activation_method_page.select_pyhiscal_activation_btn()
     checkout_page.verify_tourist_checkout_page()
